@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+* {
+  font-family: 'Fira Sans';
+}
+
+body {
+  background-color: #fff;
+  color: darkslategrey;
+}
+
+h1,h2 {
+  font-family: 'Roboto Slab';
+  
+}
+
+
+
+ul,
+ol {
+  font-family: 'Roboto Slab';
+  
+  color: rgb(41, 128, 62);
+}
+
+.colored-list {
+  color: rgb(90, 11, 100);
+}
+
+/* per pagina 04 */
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.container h1 {
+  
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.main-text {
+  margin: auto;
+  width: 80%;
+}
+
+
+/* svg styles */
+
+svg.filled {
+  fill: teal;
+}
