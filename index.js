@@ -46,7 +46,7 @@ d3.csv("export_data.csv").then ( function(data) {
       .attr("x", d => x(d.Name))
       .attr("y", d => y(d.canopy_cov))
       .attr("width", x.bandwidth())
-      .attr("height", d => height - y(d.Value))
+      .attr("height", d => height - y(d.count))
       .attr("fill", "#69b3a2")
 
 })
