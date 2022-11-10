@@ -39,21 +39,14 @@ d3.csv("export_data.csv").then ( function(data) {
   svg.append("g")
     .call(d3.axisLeft(y));
 
-   svg.selectAll("myRect")
-            .data(data)
-            .join("rect")
-            .attr("x", x(0))
-            .attr("y", d => y(d.Name))
-            .attr("width", d => x(d.count))
-            .attr("height", y.bandwidth())
-            .attr("fill", "#69b3a2")
-            .on("mousemove", function (event, d) {
-                // Replace hard coded vals (50, 90) with 50% of the tooltip wioth and height + a top buffer
-                tooltip
-                    .style("left", event.pageX - 50 + "px")
-                    .style("top", event.pageY - 90 + "px")
-                    .style("display", "inline-block")
-                    .html((d.Name) + "<br><span>" + "canopy cover" + (d.canopy_cov) + "</span>");
-            })
-            .on("mouseout", function (d) { tooltip.style("display", "none"); });
-    })
+   svg.selectAll("mybar")
+    .data(data)
+    .enter()
+    .append("rect")
+      .attr("x", d => x(d.Name))
+      .attr("y", d => y(d.canopy_cov))
+      .attr("width", x.bandwidth())
+      .attr("height", d => height - y(d.Value))
+      .attr("fill", "#69b3a2")
+
+})
